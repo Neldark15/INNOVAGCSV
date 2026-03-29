@@ -3,335 +3,515 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnovaGCSV - Remodelacion, Limpieza y Mantenimiento en El Salvador</title>
-    <meta name="description" content="Empresa contratista integral en El Salvador especializada en remodelacion, mantenimiento, limpieza profesional, fontaneria y administracion de propiedades Airbnb. Transformamos tus espacios.">
-    <meta name="keywords" content="remodelacion, limpieza, mantenimiento, fontaneria, airbnb, El Salvador, contratista">
+    <title>InnovaGCSV | Remodelacion, Mantenimiento y Administracion Airbnb en El Salvador</title>
+    <meta name="description" content="Empresa contratista lider en El Salvador. +120 proyectos completados en remodelacion, mantenimiento, limpieza profesional, fontaneria y administracion Airbnb. Solicita tu cotizacion.">
+    <meta name="keywords" content="remodelacion El Salvador, limpieza profesional, mantenimiento, fontaneria, airbnb management, contratista">
     <meta name="author" content="InnovaGCSV">
-    <meta property="og:title" content="InnovaGCSV - Transformamos Tus Espacios">
-    <meta property="og:description" content="Remodelacion, mantenimiento, limpieza y administracion Airbnb en El Salvador">
+    <meta property="og:title" content="InnovaGCSV | Transformamos Tus Espacios">
+    <meta property="og:description" content="Contratista integral en El Salvador. Remodelacion, limpieza, fontaneria y administracion Airbnb.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://innovagcsv.com">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-logo">
+            <img src="images/logo.png" alt="">
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="#inicio" class="logo">
-                <img src="images/logo.png" alt="InnovaGCSV - General Contractors" class="logo-img">
+                <img src="images/logo.png" alt="InnovaGCSV" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">INNOVA</span>
+                    <span class="logo-sub">General Contractors</span>
+                </div>
             </a>
-            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <span class="hamburger"></span>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
             </button>
             <nav class="nav" id="nav">
-                <ul class="nav-list">
-                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-                    <li><a href="#contacto" class="nav-link">Contactanos</a></li>
-                </ul>
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#testimonios" class="nav-link">Clientes</a>
+                <a href="#contacto" class="nav-link cta-nav">Cotizar Ahora</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero -->
     <section class="hero" id="inicio">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <p class="hero-subtitle">Remodelacion, mantenimiento, limpieza y administracion Airbnb</p>
-            <h1 class="hero-title">TRANSFORMAMOS TUS ESPACIOS</h1>
-            <p class="hero-text">Somos tu aliado para transformar, mantener y optimizar propiedades en El Salvador</p>
-            <a href="#contacto" class="btn btn-primary">Solicitar Cotizacion</a>
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid-pattern"></div>
+        </div>
+        <div class="container hero-inner">
+            <div class="hero-content" data-animate="fade-up">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Empresa verificada en El Salvador</span>
+                </div>
+                <h1 class="hero-title">
+                    Transformamos espacios con <span class="gradient-text">precision y confianza</span>
+                </h1>
+                <p class="hero-text">
+                    Somos la empresa contratista integral que propietarios y administradores eligen
+                    para remodelacion, mantenimiento y gestion de propiedades en El Salvador.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contacto" class="btn btn-primary btn-lg">
+                        <span>Solicitar Cotizacion Gratis</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#servicios" class="btn btn-ghost btn-lg">
+                        <span>Ver Servicios</span>
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-avatars">
+                        <div class="avatar"><i class="fas fa-user"></i></div>
+                        <div class="avatar"><i class="fas fa-user"></i></div>
+                        <div class="avatar"><i class="fas fa-user"></i></div>
+                        <div class="avatar avatar-count">+50</div>
+                    </div>
+                    <div class="trust-info">
+                        <div class="trust-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <strong>4.8/5</strong>
+                        </div>
+                        <span>Clientes satisfechos este ano</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual" data-animate="fade-left">
+                <div class="hero-card-stack">
+                    <div class="hero-stat-card card-1">
+                        <div class="stat-icon"><i class="fas fa-hard-hat"></i></div>
+                        <div class="stat-number" data-count="120">0</div>
+                        <div class="stat-label">Proyectos completados</div>
+                    </div>
+                    <div class="hero-stat-card card-2">
+                        <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="stat-number" data-count="5">0</div>
+                        <div class="stat-label">Anos de experiencia</div>
+                    </div>
+                    <div class="hero-stat-card card-3">
+                        <div class="stat-icon"><i class="fas fa-home"></i></div>
+                        <div class="stat-number" data-count="35">0</div>
+                        <div class="stat-label">Propiedades administradas</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Quienes Somos -->
-    <section class="about" id="nosotros">
-        <div class="container about-inner">
-            <div class="about-logo">
-                <img src="images/logo.png" alt="INNOVA General Contractors" class="about-logo-img">
-                <h2 class="about-brand">INNOVA</h2>
-                <p class="about-brand-sub">General Contractors</p>
-            </div>
-            <div class="about-text">
-                <h2 class="section-title light">QUIENES SOMOS</h2>
-                <p>Somos una empresa contratista integral especializada en remodelacion, mantenimiento, limpieza y administracion de propiedades residenciales y comerciales.</p>
-                <p>Brindamos soluciones profesionales, con un equipo tecnico capacitado y con experiencia en proyectos de renovacion, fontaneria, pintura, mantenimiento general y mas.</p>
+    <!-- Logos / Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-bar-inner">
+                <div class="trust-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Licencia de operacion vigente</span>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Personal verificado y capacitado</span>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Contratos transparentes</span>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Garantia en cada proyecto</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Servicios -->
+    <!-- Services -->
     <section class="services" id="servicios">
         <div class="container">
-            <div class="services-header">
-                <h2 class="section-title accent">SERVICIOS</h2>
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Nuestros Servicios</span>
+                <h2 class="section-title">Soluciones integrales para tu propiedad</h2>
+                <p class="section-desc">Cada servicio respaldado por profesionales calificados, materiales de primera y garantia de satisfaccion.</p>
             </div>
 
-            <!-- Remodelacion -->
-            <div class="service-block" id="remodelacion">
-                <div class="service-banner dark">
-                    <h3 class="service-banner-title">REMODELACION</h3>
-                    <p class="service-banner-text">Soluciones completas en instalacion, reparacion y mantenimiento de sistemas de agua, desague y plomeria, garantizando eficiencia y durabilidad</p>
-                </div>
-                <div class="service-detail">
-                    <div class="service-images">
-                        <img src="images/remodelacion/remodelacion-1.jpg" alt="Trabajos de pintura y remodelacion" loading="lazy">
-                        <img src="images/remodelacion/remodelacion-2.jpg" alt="Antes y despues de remodelacion" loading="lazy">
+            <div class="services-grid">
+                <!-- Remodelacion -->
+                <div class="service-card service-featured" data-animate="fade-up">
+                    <div class="service-card-img">
+                        <img src="images/remodelacion/remodelacion-1.jpg" alt="Remodelacion profesional" loading="lazy">
+                        <div class="service-card-badge">Mas solicitado</div>
                     </div>
-                    <div class="service-info">
-                        <ul class="service-list">
-                            <li>Reparacion de paredes, grietas y techos</li>
-                            <li>Trabajos de pintura y acabados</li>
-                            <li>Instalacion de tabla roca y molduras decorativas</li>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+                        <h3>Remodelacion</h3>
+                        <p>Renovamos espacios residenciales y comerciales con acabados de alta calidad y atencion al detalle.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Reparacion de paredes, grietas y techos</li>
+                            <li><i class="fas fa-check"></i> Pintura y acabados profesionales</li>
+                            <li><i class="fas fa-check"></i> Tabla roca y molduras decorativas</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-outline">Solicitar Cotizacion</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Limpieza -->
-            <div class="service-block" id="limpieza">
-                <div class="service-banner dark">
-                    <h3 class="service-banner-title">LIMPIEZA</h3>
-                    <p class="service-banner-text">Mantenemos cada espacio impecable con servicios de limpieza profunda y estandar para hogares, oficinas y propiedades en renta.</p>
-                </div>
-
-                <div class="service-detail">
-                    <div class="service-info">
-                        <h4 class="service-sub-title">Profunda</h4>
-                        <ul class="service-list">
-                            <li>Limpieza detallada post-obra o remodelacion</li>
-                            <li>Desinfeccion completa de todas las areas</li>
-                            <li>Limpieza de muebles, electrodomesticos y lavado a presion</li>
-                        </ul>
-                    </div>
-                    <div class="service-images single">
-                        <img src="images/limpieza/limpieza-profunda.jpg" alt="Servicio de limpieza profunda" loading="lazy">
+                        <a href="#contacto" class="btn btn-outline-dark">Cotizar este servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <div class="service-detail reverse">
-                    <div class="service-images single">
-                        <img src="images/limpieza/limpieza-productos.jpg" alt="Productos de limpieza profesional" loading="lazy">
+                <!-- Limpieza -->
+                <div class="service-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-card-img">
+                        <img src="images/limpieza/limpieza-profunda.jpg" alt="Limpieza profesional" loading="lazy">
                     </div>
-                    <div class="service-info">
-                        <h4 class="service-sub-title">Estandar</h4>
-                        <ul class="service-list">
-                            <li>Limpieza de pisos, banos, cocinas y areas comunes</li>
-                            <li>Cuidado y limpieza de areas exteriores</li>
-                            <li>Organizacion basica de espacios</li>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fas fa-spray-can-sparkles"></i></div>
+                        <h3>Limpieza Profesional</h3>
+                        <p>Limpieza profunda y estandar para hogares, oficinas y propiedades en alquiler.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Post-obra y desinfeccion completa</li>
+                            <li><i class="fas fa-check"></i> Pisos, banos, cocinas y exteriores</li>
+                            <li><i class="fas fa-check"></i> Lavado a presion y electrodomesticos</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-outline">Solicitar Cotizacion</a>
+                        <a href="#contacto" class="btn btn-outline-dark">Cotizar este servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Fontaneria -->
-            <div class="service-block" id="fontaneria">
-                <div class="service-banner dark">
-                    <h3 class="service-banner-title">FONTANERIA</h3>
-                    <p class="service-banner-text">Soluciones completas en instalacion, reparacion y mantenimiento de sistemas de agua, desague y plomeria, garantizando eficiencia y durabilidad</p>
-                </div>
-                <div class="service-detail">
-                    <div class="service-info">
-                        <ul class="service-list">
-                            <li>Reparacion e instalacion de tuberias</li>
-                            <li>Arreglo de fugas y filtraciones</li>
-                            <li>Instalacion de accesorios de bano y cocina</li>
+                <!-- Fontaneria -->
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-card-img">
+                        <img src="images/fontaneria/fontaneria-1.jpg" alt="Fontaneria profesional" loading="lazy">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fas fa-faucet-drip"></i></div>
+                        <h3>Fontaneria</h3>
+                        <p>Instalacion, reparacion y mantenimiento de sistemas de agua y desague con garantia.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Reparacion de tuberias y fugas</li>
+                            <li><i class="fas fa-check"></i> Instalacion de accesorios</li>
+                            <li><i class="fas fa-check"></i> Mantenimiento preventivo</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-outline">Solicitar Cotizacion</a>
-                    </div>
-                    <div class="service-images single">
-                        <img src="images/fontaneria/fontaneria-1.jpg" alt="Servicio de fontaneria profesional" loading="lazy">
+                        <a href="#contacto" class="btn btn-outline-dark">Cotizar este servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Administracion Airbnb -->
-            <div class="service-block" id="airbnb">
-                <div class="service-banner dark">
-                    <h3 class="service-banner-title">ADMINISTRACION AIRBNB</h3>
-                    <p class="service-banner-text">Gestion integral de propiedades para alquiler a corto plazo: limpieza, mantenimiento, check-in/out y atencion a huespedes, optimizando tu tiempo.</p>
-                </div>
-                <div class="service-detail">
-                    <div class="service-images single">
-                        <img src="images/airbnb/airbnb-1.jpg" alt="Administracion de propiedades Airbnb" loading="lazy">
+                <!-- Airbnb -->
+                <div class="service-card" data-animate="fade-up" data-delay="300">
+                    <div class="service-card-img">
+                        <img src="images/airbnb/airbnb-1.jpg" alt="Administracion Airbnb" loading="lazy">
                     </div>
-                    <div class="service-info">
-                        <ul class="service-list">
-                            <li>Limpieza y preparacion del alojamiento</li>
-                            <li>Supervision de mantenimiento y suministros</li>
-                            <li>Atencion y coordinacion con huespedes</li>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fas fa-key"></i></div>
+                        <h3>Administracion Airbnb</h3>
+                        <p>Gestion integral de tu propiedad: limpieza, mantenimiento, check-in y atencion a huespedes.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Preparacion y limpieza turnover</li>
+                            <li><i class="fas fa-check"></i> Coordinacion con huespedes 24/7</li>
+                            <li><i class="fas fa-check"></i> Supervision y suministros</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-outline">Solicitar Cotizacion</a>
+                        <a href="#contacto" class="btn btn-outline-dark">Cotizar este servicio <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Proyectos -->
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Como Trabajamos</span>
+                <h2 class="section-title">Proceso simple, resultados excepcionales</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step" data-animate="fade-up">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Consulta Gratuita</h3>
+                    <p>Escuchamos tus necesidades y evaluamos el proyecto sin costo ni compromiso.</p>
+                </div>
+                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
+                <div class="process-step" data-animate="fade-up" data-delay="150">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Cotizacion Detallada</h3>
+                    <p>Recibe un presupuesto transparente con desglose de materiales, mano de obra y tiempos.</p>
+                </div>
+                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
+                <div class="process-step" data-animate="fade-up" data-delay="300">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Ejecucion Profesional</h3>
+                    <p>Nuestro equipo trabaja con puntualidad, limpieza y comunicacion constante.</p>
+                </div>
+                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
+                <div class="process-step" data-animate="fade-up" data-delay="450">
+                    <div class="step-number">04</div>
+                    <div class="step-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Entrega con Garantia</h3>
+                    <p>Verificamos cada detalle contigo y respaldamos nuestro trabajo con garantia escrita.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
     <section class="projects" id="proyectos">
         <div class="container">
-            <div class="projects-header dark">
-                <h2 class="section-title light">Proyectos</h2>
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Portafolio</span>
+                <h2 class="section-title">Proyectos que hablan por nosotros</h2>
+                <p class="section-desc">Cada proyecto es una muestra de nuestro compromiso con la calidad y la satisfaccion del cliente.</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-lightbox="images/proyectos/torre-91.jpg">
+                <div class="project-card" data-lightbox="images/proyectos/torre-91.jpg" data-animate="fade-up">
                     <img src="images/proyectos/torre-91.jpg" alt="Proyecto Torre 91" loading="lazy">
-                    <div class="project-overlay">
-                        <span class="project-name">Torre 91</span>
-                        <i class="fas fa-search-plus"></i>
+                    <div class="project-info">
+                        <span class="project-tag">Remodelacion</span>
+                        <h3>Torre 91</h3>
+                        <p>Remodelacion integral de areas comunes</p>
                     </div>
                 </div>
-                <div class="project-card" data-lightbox="images/proyectos/puerta-el-alma.jpg">
+                <div class="project-card" data-lightbox="images/proyectos/puerta-el-alma.jpg" data-animate="fade-up" data-delay="100">
                     <img src="images/proyectos/puerta-el-alma.jpg" alt="Proyecto Puerta El Alma" loading="lazy">
-                    <div class="project-overlay">
-                        <span class="project-name">Puerta El Alma</span>
-                        <i class="fas fa-search-plus"></i>
+                    <div class="project-info">
+                        <span class="project-tag">Mantenimiento</span>
+                        <h3>Puerta El Alma</h3>
+                        <p>Mantenimiento preventivo residencial</p>
                     </div>
                 </div>
-                <div class="project-card" data-lightbox="images/proyectos/proyecto-3.avif">
+                <div class="project-card" data-lightbox="images/proyectos/proyecto-3.avif" data-animate="fade-up" data-delay="200">
                     <img src="images/proyectos/proyecto-3.avif" alt="Proyecto residencial" loading="lazy">
-                    <div class="project-overlay">
-                        <span class="project-name">Proyecto Residencial</span>
-                        <i class="fas fa-search-plus"></i>
+                    <div class="project-info">
+                        <span class="project-tag">Airbnb</span>
+                        <h3>Residencial Premium</h3>
+                        <p>Administracion y acondicionamiento</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonios (MEJORA NUEVA) -->
+    <!-- Testimonials -->
     <section class="testimonials" id="testimonios">
         <div class="container">
-            <h2 class="section-title accent">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Testimonios</span>
+                <h2 class="section-title">La opinion de quienes confian en nosotros</h2>
+            </div>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
+                <div class="testimonial-card" data-animate="fade-up">
+                    <div class="testimonial-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"Excelente trabajo en la remodelacion de nuestra oficina. El equipo fue puntual, profesional y el resultado supero nuestras expectativas."</p>
+                    <blockquote>"Excelente trabajo en la remodelacion de nuestra oficina. El equipo fue puntual, profesional y el resultado supero nuestras expectativas. Lo recomiendo totalmente."</blockquote>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div>
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
                             <strong>Maria Rodriguez</strong>
-                            <span>Remodelacion de oficina</span>
+                            <span>Remodelacion de oficina comercial</span>
                         </div>
+                        <i class="fas fa-quote-right testimonial-quote-icon"></i>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
+                <div class="testimonial-card" data-animate="fade-up" data-delay="100">
+                    <div class="testimonial-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"Administran mi propiedad en Airbnb de manera impecable. Mis huespedes siempre dejan resenas positivas sobre la limpieza y atencion."</p>
+                    <blockquote>"Administran mi propiedad Airbnb de manera impecable. Mis huespedes siempre dejan resenas de 5 estrellas sobre la limpieza y atencion. Una inversion que vale cada centavo."</blockquote>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div>
+                        <div class="author-avatar">CM</div>
+                        <div class="author-info">
                             <strong>Carlos Martinez</strong>
-                            <span>Administracion Airbnb</span>
+                            <span>Propietario Airbnb - 2 propiedades</span>
                         </div>
+                        <i class="fas fa-quote-right testimonial-quote-icon"></i>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
+                <div class="testimonial-card" data-animate="fade-up" data-delay="200">
+                    <div class="testimonial-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p class="testimonial-text">"Resolvieron un problema de fontaneria que otros no pudieron. Rapidos, eficientes y a un precio justo. Totalmente recomendados."</p>
+                    <blockquote>"Resolvieron un problema de fontaneria que otros no pudieron. Rapidos, eficientes y a un precio justo. Ahora son mi opcion permanente para mantenimiento."</blockquote>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div>
+                        <div class="author-avatar">AH</div>
+                        <div class="author-info">
                             <strong>Ana Hernandez</strong>
-                            <span>Servicio de fontaneria</span>
+                            <span>Servicio de fontaneria residencial</span>
                         </div>
+                        <i class="fas fa-quote-right testimonial-quote-icon"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacto -->
-    <section class="contact" id="contacto">
-        <div class="container contact-inner">
-            <div class="contact-brand">
-                <img src="images/logo.png" alt="INNOVA General Contractors" class="contact-logo">
-                <h2 class="contact-brand-name">INNOVA</h2>
-                <p class="contact-brand-sub">General Contractors</p>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card" data-animate="fade-up">
+                <div class="cta-content">
+                    <h2>Tu proyecto merece profesionales</h2>
+                    <p>Obten una cotizacion detallada en menos de 24 horas. Sin compromiso, sin costos ocultos.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="#contacto" class="btn btn-primary btn-lg">
+                        <span>Cotizar Mi Proyecto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/50374856657?text=Hola%2C%20necesito%20una%20cotizacion" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Escribir por WhatsApp</span>
+                    </a>
+                </div>
             </div>
-            <div class="contact-form-wrapper">
-                <h2 class="section-title light">Contactanos</h2>
-                <form class="contact-form" id="contactForm" action="#" method="POST">
-                    <div class="form-group">
-                        <label for="nombre">Nombre <span class="required">*</span></label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Juan Perez" required>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="fade-up">
+                    <span class="section-tag">Contacto</span>
+                    <h2 class="section-title">Hablemos de tu proyecto</h2>
+                    <p class="contact-desc">Completa el formulario o contactanos directamente. Respondemos en menos de 2 horas en horario laboral.</p>
+
+                    <div class="contact-methods">
+                        <a href="https://wa.me/50374856657" target="_blank" rel="noopener" class="contact-method">
+                            <div class="method-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>7485-6657</span>
+                            </div>
+                        </a>
+                        <a href="mailto:info@innovagcsv.com" class="contact-method">
+                            <div class="method-icon email"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <strong>Email</strong>
+                                <span>info@innovagcsv.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+50374856657" class="contact-method">
+                            <div class="method-icon phone"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <strong>Telefono</strong>
+                                <span>7485-6657</span>
+                            </div>
+                        </a>
                     </div>
-                    <div class="form-group">
-                        <label for="telefono">Telefono <span class="required">*</span></label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="7481-6978" required>
+
+                    <div class="contact-guarantee">
+                        <i class="fas fa-shield-alt"></i>
+                        <p><strong>Compromiso de respuesta:</strong> Si no respondemos en 2 horas, tu primera consulta tecnica es gratis.</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="example@mail.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="servicio">Servicio de interes <span class="required">*</span></label>
-                        <select id="servicio" name="servicio" required>
-                            <option value="">Selecciona un servicio</option>
-                            <option value="remodelacion">Remodelacion</option>
-                            <option value="limpieza-profunda">Limpieza Profunda</option>
-                            <option value="limpieza-estandar">Limpieza Estandar</option>
-                            <option value="fontaneria">Fontaneria</option>
-                            <option value="airbnb">Administracion Airbnb</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje <span class="required">*</span></label>
-                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Dejanos una breve descripcion del servicio de tu interes." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
+                </div>
+
+                <div class="contact-form-card" data-animate="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Perez" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Telefono</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 7481-6978" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="optional">(opcional)</span></label>
+                            <input type="email" id="email" name="email" placeholder="Ej: correo@mail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio">Servicio de interes</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="remodelacion">Remodelacion</option>
+                                <option value="limpieza-profunda">Limpieza Profunda</option>
+                                <option value="limpieza-estandar">Limpieza Estandar</option>
+                                <option value="fontaneria">Fontaneria</option>
+                                <option value="airbnb">Administracion Airbnb</option>
+                                <option value="otro">Otro servicio</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Describe tu proyecto</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuentanos que necesitas: tipo de trabajo, tamano del espacio, urgencia..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">
+                            <span>Enviar Solicitud</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p class="form-note"><i class="fas fa-lock"></i> Tu informacion es confidencial y no sera compartida.</p>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <img src="images/logo.png" alt="InnovaGCSV" class="footer-logo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="InnovaGCSV" class="footer-logo">
+                    <p>Empresa contratista integral en El Salvador. Transformamos espacios con profesionalismo, transparencia y garantia.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/innovagcsv" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/innovagcsv" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/50374856657" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <a href="#servicios">Remodelacion</a>
+                    <a href="#servicios">Limpieza Profesional</a>
+                    <a href="#servicios">Fontaneria</a>
+                    <a href="#servicios">Administracion Airbnb</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Empresa</h4>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#proyectos">Proyectos</a>
+                    <a href="#testimonios">Testimonios</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <a href="mailto:info@innovagcsv.com"><i class="fas fa-envelope"></i> info@innovagcsv.com</a>
+                    <a href="tel:+50374856657"><i class="fas fa-phone-alt"></i> 7485-6657</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> San Salvador, El Salvador</a>
+                </div>
             </div>
-            <div class="footer-contact">
-                <a href="mailto:info@innovagcsv.com" class="footer-link">
-                    <i class="fas fa-envelope"></i> info@innovagcsv.com
-                </a>
-                <a href="tel:+50374856657" class="footer-link">
-                    <i class="fas fa-phone"></i> 7485-6657
-                </a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 InnovaGCSV General Contractors. Todos los derechos reservados.</p>
             </div>
-            <div class="footer-social">
-                <a href="https://www.facebook.com/innovagcsv" target="_blank" rel="noopener" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/innovagcsv" target="_blank" rel="noopener" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/50374856657" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <p class="footer-copy">&copy; 2025 InnovaGCSV - General Contractors. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button (MEJORA) -->
-    <a href="https://wa.me/50374856657?text=Hola%2C%20me%20interesa%20conocer%20mas%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/50374856657?text=Hola%2C%20me%20interesa%20conocer%20mas%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
+        <span class="wa-tooltip">Chatea con nosotros</span>
     </a>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+        <button class="lightbox-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
         <img src="" alt="" class="lightbox-img" id="lightboxImg">
     </div>
 

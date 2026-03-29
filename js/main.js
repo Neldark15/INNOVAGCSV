@@ -1,157 +1,149 @@
 /* ============================================
-   InnovaGCSV - Main JavaScript
+   InnovaGCSV — Modern JS
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Header scroll effect ---
+    // --- Loader ---
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => {
+        setTimeout(() => loader.classList.add('hidden'), 900);
+    });
+    // Fallback
+    setTimeout(() => loader.classList.add('hidden'), 2500);
+
+    // --- Header scroll ---
     const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        header.classList.toggle('scrolled', window.scrollY > 50);
-    });
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-    // --- Mobile nav toggle ---
-    const navToggle = document.querySelector('.nav-toggle');
+    // --- Mobile nav ---
+    const toggle = document.getElementById('navToggle');
     const nav = document.getElementById('nav');
-
-    navToggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('open');
-        navToggle.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', isOpen);
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('open');
+        nav.classList.toggle('open');
     });
-
-    // Close nav on link click
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
+            toggle.classList.remove('open');
             nav.classList.remove('open');
-            navToggle.classList.remove('open');
-            navToggle.setAttribute('aria-expanded', 'false');
         });
     });
 
     // --- Active nav on scroll ---
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-
-    const updateActiveNav = () => {
-        const scrollPos = window.scrollY + 120;
-        sections.forEach(section => {
-            const top = section.offsetTop;
-            const height = section.offsetHeight;
-            const id = section.getAttribute('id');
-            if (scrollPos >= top && scrollPos < top + height) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
+    const updateNav = () => {
+        const y = window.scrollY + 150;
+        sections.forEach(s => {
+            const top = s.offsetTop, h = s.offsetHeight, id = s.id;
+            if (y >= top && y < top + h) {
+                navLinks.forEach(l => {
+                    l.classList.toggle('active', l.getAttribute('href') === `#${id}`);
                 });
             }
         });
     };
+    window.addEventListener('scroll', updateNav, { passive: true });
 
-    window.addEventListener('scroll', updateActiveNav);
+    // --- Scroll animations ---
+    const animated = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                const delay = e.target.dataset.delay || 0;
+                setTimeout(() => e.target.classList.add('visible'), +delay);
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    animated.forEach(el => observer.observe(el));
+
+    // --- Counter animation ---
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                const el = e.target;
+                const target = +el.dataset.count;
+                const duration = 1800;
+                const start = performance.now();
+
+                const animate = (now) => {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Ease out cubic
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = Math.round(target * ease);
+                    if (progress < 1) requestAnimationFrame(animate);
+                };
+                requestAnimationFrame(animate);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
 
     // --- Lightbox ---
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxClose = document.querySelector('.lightbox-close');
+    const lbClose = document.querySelector('.lightbox-close');
 
     document.querySelectorAll('[data-lightbox]').forEach(card => {
         card.addEventListener('click', () => {
-            const src = card.getAttribute('data-lightbox');
-            lightboxImg.src = src;
+            lightboxImg.src = card.dataset.lightbox;
             lightboxImg.alt = card.querySelector('img')?.alt || '';
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     });
 
-    const closeLightbox = () => {
+    const closeLB = () => {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
-        lightboxImg.src = '';
     };
+    lbClose.addEventListener('click', closeLB);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
 
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeLightbox();
-    });
-
-    // --- Form validation ---
+    // --- Form ---
     const form = document.getElementById('contactForm');
-
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', e => {
         e.preventDefault();
 
-        const nombre = document.getElementById('nombre').value.trim();
-        const telefono = document.getElementById('telefono').value.trim();
-        const servicio = document.getElementById('servicio').value;
-        const mensaje = document.getElementById('mensaje').value.trim();
-
-        if (!nombre || !telefono || !servicio || !mensaje) {
-            showFormMessage('Por favor, completa todos los campos requeridos.', 'error');
+        const data = Object.fromEntries(new FormData(form));
+        if (!data.nombre || !data.telefono || !data.servicio || !data.mensaje) {
+            showMsg('Por favor completa todos los campos requeridos.', 'error');
             return;
         }
 
-        // Build WhatsApp message as fallback
         const waMsg = encodeURIComponent(
-            `Hola, soy ${nombre}.\n` +
-            `Telefono: ${telefono}\n` +
-            `Servicio: ${servicio}\n` +
-            `Mensaje: ${mensaje}`
+            `Hola, soy ${data.nombre}.\n` +
+            `Tel: ${data.telefono}\n` +
+            `Servicio: ${data.servicio}\n` +
+            `Proyecto: ${data.mensaje}`
         );
 
-        showFormMessage('Gracias por contactarnos. Te responderemos pronto.', 'success');
-
-        // Open WhatsApp with the message
+        showMsg('Gracias por tu solicitud. Redirigiendo a WhatsApp...', 'success');
         setTimeout(() => {
             window.open(`https://wa.me/50374856657?text=${waMsg}`, '_blank');
-        }, 1000);
-
+        }, 1200);
         form.reset();
     });
 
-    function showFormMessage(text, type) {
-        let msgEl = document.querySelector('.form-message');
-        if (!msgEl) {
-            msgEl = document.createElement('div');
-            msgEl.className = 'form-message';
-            form.appendChild(msgEl);
-        }
-        msgEl.textContent = text;
-        msgEl.style.padding = '12px 16px';
-        msgEl.style.borderRadius = '6px';
-        msgEl.style.marginTop = '12px';
-        msgEl.style.fontWeight = '500';
-        msgEl.style.textAlign = 'center';
-
-        if (type === 'success') {
-            msgEl.style.background = 'rgba(37, 211, 102, 0.2)';
-            msgEl.style.color = '#25d366';
-        } else {
-            msgEl.style.background = 'rgba(239, 68, 68, 0.2)';
-            msgEl.style.color = '#ef4444';
-        }
-
-        setTimeout(() => msgEl.remove(), 5000);
+    function showMsg(text, type) {
+        let el = form.querySelector('.form-msg');
+        if (!el) { el = document.createElement('div'); el.className = 'form-msg'; form.appendChild(el); }
+        el.textContent = text;
+        el.style.cssText = `
+            padding:12px 16px; border-radius:10px; margin-top:12px;
+            text-align:center; font-size:.85rem; font-weight:500;
+            background:${type === 'success' ? 'rgba(34,197,94,.12)' : 'rgba(239,68,68,.12)'};
+            color:${type === 'success' ? '#22c55e' : '#ef4444'};
+            border:1px solid ${type === 'success' ? 'rgba(34,197,94,.2)' : 'rgba(239,68,68,.2)'};
+        `;
+        setTimeout(() => el.remove(), 5000);
     }
-
-    // --- Scroll animations ---
-    const animateElements = document.querySelectorAll('.service-block, .project-card, .testimonial-card');
-    animateElements.forEach(el => el.classList.add('animate-on-scroll'));
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    animateElements.forEach(el => observer.observe(el));
 });
