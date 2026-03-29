@@ -724,6 +724,15 @@ ul { list-style: none; }
     padding-top: 20px; text-align: center;
 }
 .footer-bottom p { font-size: .75rem; color: var(--text-muted); }
+.footer-credit {
+    margin-top: 8px; font-size: .7rem; color: var(--text-muted);
+    letter-spacing: .5px;
+}
+.footer-credit a {
+    color: var(--cyan); font-weight: 600;
+    letter-spacing: 1.5px; transition: var(--transition);
+}
+.footer-credit a:hover { color: var(--white); }
 
 /* ---- WHATSAPP FLOAT ---- */
 .whatsapp-float {
