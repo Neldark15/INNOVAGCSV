@@ -43,7 +43,40 @@ body {
     background: var(--bg);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    position: relative;
 }
+
+/* Global watermark (fixed background image) */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('../images/watermark.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.18;
+    filter: grayscale(20%) contrast(0.95) saturate(1.1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Dark overlay on top of watermark for readability */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(5,10,20,.35) 0%, rgba(5,10,20,.55) 100%),
+        radial-gradient(ellipse at center, transparent 30%, rgba(5,10,20,.5) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure all content stays above watermark */
+.header, .loader, .hero, .trust-bar, .about-us, .services, .process,
+.projects, .testimonials, .cta-section, .contact, .footer,
+.whatsapp-float, .lightbox { position: relative; z-index: 1; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 img { max-width: 100%; height: auto; display: block; }
@@ -248,9 +281,9 @@ ul { list-style: none; }
 .hero-gradient {
     position: absolute; inset: 0;
     background:
-        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,200,255,.08) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 80% 60%, rgba(0,100,200,.06) 0%, transparent 60%),
-        var(--gradient-bg);
+        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,200,255,.1) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 60%, rgba(0,100,200,.08) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(5,10,20,.45) 0%, rgba(10,22,40,.35) 50%, rgba(5,10,20,.6) 100%);
 }
 .hero-grid-pattern {
     position: absolute; inset: 0;
@@ -358,7 +391,9 @@ ul { list-style: none; }
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 20px 0;
-    background: var(--bg-surface);
+    background: rgba(15, 25, 35, .6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 .trust-bar-inner {
     display: flex; align-items: center; justify-content: center;
@@ -583,7 +618,9 @@ ul { list-style: none; }
 /* ---- PROCESS ---- */
 .process {
     padding: 100px 0;
-    background: var(--bg-surface);
+    background: rgba(15, 25, 35, .55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -665,7 +702,13 @@ ul { list-style: none; }
 .project-info p { font-size: .8rem; color: var(--text-muted); }
 
 /* ---- TESTIMONIALS ---- */
-.testimonials { padding: 100px 0; background: var(--bg-surface); border-top: 1px solid var(--border); }
+.testimonials {
+    padding: 100px 0;
+    background: rgba(15, 25, 35, .55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-top: 1px solid var(--border);
+}
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -819,7 +862,9 @@ ul { list-style: none; }
 
 /* ---- FOOTER ---- */
 .footer {
-    background: var(--bg-surface);
+    background: rgba(15, 25, 35, .7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-top: 1px solid var(--border);
     padding: 60px 0 24px;
 }
