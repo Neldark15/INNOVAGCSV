@@ -175,22 +175,26 @@ ul { list-style: none; }
 .logo { display: flex; align-items: center; }
 .logo-wrap {
     position: relative;
-    padding: 6px 14px;
-    border-radius: 10px;
-    background: rgba(255,255,255,.92);
-    border: 1px solid rgba(255,255,255,.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 20px rgba(0,200,255,.18), inset 0 1px 0 rgba(255,255,255,.6);
+    display: flex; align-items: center;
     transition: var(--transition);
 }
-.logo:hover .logo-wrap {
-    box-shadow: 0 6px 28px rgba(0,200,255,.3), inset 0 1px 0 rgba(255,255,255,.8);
-    transform: translateY(-1px);
-}
 .logo-img {
-    height: 40px;
+    height: 46px;
     display: block;
+    filter:
+        brightness(1.4)
+        contrast(1.1)
+        drop-shadow(0 0 12px rgba(0,200,255,.35))
+        drop-shadow(0 2px 8px rgba(0,0,0,.4));
+    transition: var(--transition);
+}
+.logo:hover .logo-img {
+    filter:
+        brightness(1.5)
+        contrast(1.15)
+        drop-shadow(0 0 16px rgba(0,200,255,.55))
+        drop-shadow(0 2px 10px rgba(0,0,0,.4));
+    transform: translateY(-1px);
 }
 
 .nav { display: flex; align-items: center; gap: 6px; }
