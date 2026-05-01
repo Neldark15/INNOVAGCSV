@@ -200,7 +200,7 @@
             </div>
 
             <div class="services-grid">
-                <!-- Remodelacion -->
+                <!-- Remodelacion (Featured) -->
                 <div class="service-card service-featured" data-animate="fade-up">
                     <div class="service-card-img">
                         <img src="images/remodelacion/remodelacion-1.jpg" alt="Remodelacion profesional" loading="lazy">
@@ -212,15 +212,51 @@
                         <p>Renovamos espacios residenciales y comerciales con acabados de alta calidad y atencion al detalle.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Reparacion de paredes, grietas y techos</li>
-                            <li><i class="fas fa-check"></i> Pintura y acabados profesionales</li>
                             <li><i class="fas fa-check"></i> Tabla roca y molduras decorativas</li>
+                            <li><i class="fas fa-check"></i> Pisos y revestimientos</li>
                         </ul>
                         <a href="servicios/remodelacion.html" class="btn btn-outline-dark">Ver detalle <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Limpieza -->
+                <!-- Construccion -->
+                <div class="service-card" data-animate="fade-up">
+                    <div class="service-card-img">
+                        <img src="images/proyectos-nuevos/edificio-exterior-1.jpg" alt="Construccion profesional" loading="lazy">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
+                        <h3>Construccion</h3>
+                        <p>Construimos proyectos residenciales y comerciales desde la planificacion hasta la entrega final.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Obra civil y estructural</li>
+                            <li><i class="fas fa-check"></i> Ampliaciones y nuevos niveles</li>
+                            <li><i class="fas fa-check"></i> Supervision y direccion de obra</li>
+                        </ul>
+                        <a href="servicios/construccion.html" class="btn btn-outline-dark">Ver detalle <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Pintura -->
                 <div class="service-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-card-img">
+                        <img src="images/proyectos-nuevos/andamios-trabajo.jpg" alt="Pintura profesional interior y exterior" loading="lazy">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fas fa-fill-drip"></i></div>
+                        <h3>Pintura Interior y Exterior</h3>
+                        <p>Pintura profesional para interiores y exteriores con preparacion adecuada y materiales de alta durabilidad.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Interior con anclajes y soportes profesionales</li>
+                            <li><i class="fas fa-check"></i> Exterior con boom lift y andamios</li>
+                            <li><i class="fas fa-check"></i> Preparacion de superficies y acabados</li>
+                        </ul>
+                        <a href="servicios/pintura.html" class="btn btn-outline-dark">Ver detalle <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Limpieza -->
+                <div class="service-card" data-animate="fade-up" data-delay="200">
                     <div class="service-card-img">
                         <img src="images/limpieza/limpieza-profunda.jpg" alt="Limpieza profesional" loading="lazy">
                     </div>
@@ -238,7 +274,7 @@
                 </div>
 
                 <!-- Fontaneria -->
-                <div class="service-card" data-animate="fade-up" data-delay="200">
+                <div class="service-card" data-animate="fade-up">
                     <div class="service-card-img">
                         <img src="images/fontaneria/fontaneria-1.jpg" alt="Fontaneria profesional" loading="lazy">
                     </div>
@@ -255,8 +291,27 @@
                     </div>
                 </div>
 
-                <!-- Airbnb -->
-                <div class="service-card service-featured service-featured-reverse" data-animate="fade-up" data-delay="300">
+                <!-- Renta de Contenedores -->
+                <div class="service-card service-card-pending" data-animate="fade-up" data-delay="100">
+                    <div class="service-card-img service-card-img-placeholder">
+                        <div class="placeholder-icon"><i class="fas fa-cube"></i></div>
+                        <span class="placeholder-label">Foto proximamente</span>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fas fa-truck-ramp-box"></i></div>
+                        <h3>Renta de Contenedores</h3>
+                        <p>Servicio de renta de contenedores para almacenamiento, obra o desechos de construccion.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Distintos tamaños disponibles</li>
+                            <li><i class="fas fa-check"></i> Entrega y retiro programado</li>
+                            <li><i class="fas fa-check"></i> Renta por dias o semanas</li>
+                        </ul>
+                        <a href="servicios/contenedores.html" class="btn btn-outline-dark">Ver detalle <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Airbnb (Featured Reverse) -->
+                <div class="service-card service-featured service-featured-reverse" data-animate="fade-up">
                     <div class="service-card-body">
                         <div class="service-icon"><i class="fas fa-key"></i></div>
                         <h3>Administracion Airbnb</h3>
@@ -584,10 +639,13 @@
                             <label for="servicio">Servicio de interes</label>
                             <select id="servicio" name="servicio" required>
                                 <option value="">Selecciona un servicio</option>
+                                <option value="construccion">Construccion</option>
                                 <option value="remodelacion">Remodelacion</option>
+                                <option value="pintura">Pintura Interior y Exterior</option>
                                 <option value="limpieza-profunda">Limpieza Profunda</option>
                                 <option value="limpieza-estandar">Limpieza Estandar</option>
                                 <option value="fontaneria">Fontaneria</option>
+                                <option value="contenedores">Renta de Contenedores</option>
                                 <option value="airbnb">Administracion Airbnb</option>
                                 <option value="otro">Otro servicio</option>
                             </select>
@@ -622,10 +680,13 @@
                 </div>
                 <div class="footer-links">
                     <h4>Servicios</h4>
-                    <a href="#servicios">Remodelacion</a>
-                    <a href="#servicios">Limpieza Profesional</a>
-                    <a href="#servicios">Fontaneria</a>
-                    <a href="#servicios">Administracion Airbnb</a>
+                    <a href="servicios/construccion.html">Construccion</a>
+                    <a href="servicios/remodelacion.html">Remodelacion</a>
+                    <a href="servicios/pintura.html">Pintura Int. y Ext.</a>
+                    <a href="servicios/limpieza.html">Limpieza Profesional</a>
+                    <a href="servicios/fontaneria.html">Fontaneria</a>
+                    <a href="servicios/contenedores.html">Renta de Contenedores</a>
+                    <a href="servicios/airbnb.html">Administracion Airbnb</a>
                 </div>
                 <div class="footer-links">
                     <h4>Empresa</h4>
@@ -704,9 +765,12 @@
                     "@type": "OfferCatalog",
                     "name": "Servicios de Contratista",
                     "itemListElement": [
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Construccion", "url": "https://innovagcsv.com/servicios/construccion.html"}},
                         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Remodelacion", "url": "https://innovagcsv.com/servicios/remodelacion.html"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pintura Interior y Exterior", "url": "https://innovagcsv.com/servicios/pintura.html"}},
                         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Limpieza Profesional", "url": "https://innovagcsv.com/servicios/limpieza.html"}},
                         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fontaneria", "url": "https://innovagcsv.com/servicios/fontaneria.html"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Renta de Contenedores", "url": "https://innovagcsv.com/servicios/contenedores.html"}},
                         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Administracion Airbnb", "url": "https://innovagcsv.com/servicios/airbnb.html"}}
                     ]
                 }

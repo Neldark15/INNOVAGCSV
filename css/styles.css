@@ -677,6 +677,55 @@ ul { list-style: none; }
 }
 .service-features li i { color: var(--cyan); font-size: .7rem; }
 
+/* Placeholder for pending photos (Renta de Contenedores) */
+.service-card-img-placeholder {
+    aspect-ratio: 16/10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background:
+        repeating-linear-gradient(45deg, rgba(56,152,236,.04) 0 12px, rgba(56,152,236,.08) 12px 24px),
+        var(--bg-card-hover);
+    border-bottom: 1px dashed rgba(56,152,236,.25);
+    color: var(--cyan);
+}
+.placeholder-icon {
+    width: 64px; height: 64px;
+    border-radius: 12px;
+    background: rgba(56,152,236,.1);
+    border: 1px solid rgba(56,152,236,.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    color: var(--cyan);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+}
+.placeholder-label {
+    font-family: var(--font-heading);
+    font-size: .7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.service-card-pending { position: relative; }
+.service-card-pending::after {
+    content: 'Proximamente';
+    position: absolute;
+    top: 14px; right: 14px;
+    padding: 4px 10px;
+    background: rgba(251,191,36,.15);
+    border: 1px solid rgba(251,191,36,.3);
+    border-radius: var(--radius-full);
+    color: var(--gold);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+}
+
 /* ---- PROCESS (Timeline) ---- */
 .process {
     padding: 100px 0;
