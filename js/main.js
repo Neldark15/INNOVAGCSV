@@ -100,6 +100,17 @@ document.addEventListener('DOMContentLoaded', () => {
         tlObserver.observe(tl);
     }
 
+    // --- About Us Read More ---
+    const aboutToggle = document.getElementById('aboutToggle');
+    const aboutMore = document.getElementById('aboutMore');
+    if (aboutToggle && aboutMore) {
+        aboutToggle.addEventListener('click', () => {
+            const isExpanded = aboutMore.classList.toggle('expanded');
+            aboutToggle.classList.toggle('expanded', isExpanded);
+            aboutToggle.setAttribute('aria-expanded', isExpanded);
+        });
+    }
+
     // --- Lightbox ---
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
