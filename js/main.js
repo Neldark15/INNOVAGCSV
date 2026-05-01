@@ -86,6 +86,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
     counters.forEach(c => counterObserver.observe(c));
 
+    // --- Timeline progress ---
+    const tl = document.querySelector('.timeline-line');
+    if (tl) {
+        const tlObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    tl.classList.add('animated');
+                    tlObserver.unobserve(tl);
+                }
+            });
+        }, { threshold: 0.3 });
+        tlObserver.observe(tl);
+    }
+
     // --- Lightbox ---
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');

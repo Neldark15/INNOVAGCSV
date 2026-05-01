@@ -11,7 +11,11 @@
     <meta property="og:description" content="Contratista integral en El Salvador. Remodelacion, limpieza, fontaneria y administracion Airbnb.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://innovagcsv.com">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="images/logos/logo-square-dark.png">
+    <link rel="canonical" href="https://innovagcsv.com/">
+    <link rel="alternate" hreflang="es" href="https://innovagcsv.com/">
+    <link rel="alternate" hreflang="en" href="https://innovagcsv.com/">
+    <link rel="alternate" hreflang="x-default" href="https://innovagcsv.com/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -31,7 +35,7 @@
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="#inicio" class="logo">
-                <img src="images/logo.png" alt="InnovaGCSV" class="logo-img">
+                <img src="images/logos/logo-horizontal-color.png" alt="InnovaGCSV" class="logo-img">
                 <div class="logo-text">
                     <span class="logo-name">INNOVA</span>
                     <span class="logo-sub">General Contractors</span>
@@ -168,7 +172,7 @@
                             <li><i class="fas fa-check"></i> Pintura y acabados profesionales</li>
                             <li><i class="fas fa-check"></i> Tabla roca y molduras decorativas</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-outline-dark">Cotizar este servicio <i class="fas fa-arrow-right"></i></a>
+                        <a href="servicios/remodelacion.html" class="btn btn-outline-dark">Ver detalle <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -186,7 +190,7 @@
                             <li><i class="fas fa-check"></i> Pisos, baños, cocinas y exteriores</li>
                             <li><i class="fas fa-check"></i> Lavado a presion y electrodomesticos</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-outline-dark">Cotizar este servicio <i class="fas fa-arrow-right"></i></a>
+                        <a href="servicios/limpieza.html" class="btn btn-outline-dark">Ver detalle <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -204,15 +208,12 @@
                             <li><i class="fas fa-check"></i> Instalacion de accesorios</li>
                             <li><i class="fas fa-check"></i> Mantenimiento preventivo</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-outline-dark">Cotizar este servicio <i class="fas fa-arrow-right"></i></a>
+                        <a href="servicios/fontaneria.html" class="btn btn-outline-dark">Ver detalle <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- Airbnb -->
-                <div class="service-card" data-animate="fade-up" data-delay="300">
-                    <div class="service-card-img">
-                        <img src="images/airbnb/airbnb-1.jpg" alt="Administracion Airbnb" loading="lazy">
-                    </div>
+                <div class="service-card service-featured service-featured-reverse" data-animate="fade-up" data-delay="300">
                     <div class="service-card-body">
                         <div class="service-icon"><i class="fas fa-key"></i></div>
                         <h3>Administracion Airbnb</h3>
@@ -222,7 +223,10 @@
                             <li><i class="fas fa-check"></i> Coordinacion con huespedes 24/7</li>
                             <li><i class="fas fa-check"></i> Supervision y suministros</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-outline-dark">Cotizar este servicio <i class="fas fa-arrow-right"></i></a>
+                        <a href="servicios/airbnb.html" class="btn btn-outline-dark">Ver detalle <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card-img">
+                        <img src="images/airbnb/airbnb-1.jpg" alt="Administracion Airbnb" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -236,33 +240,41 @@
                 <span class="section-tag">Como Trabajamos</span>
                 <h2 class="section-title">Proceso simple, resultados excepcionales</h2>
             </div>
-            <div class="process-grid">
-                <div class="process-step" data-animate="fade-up">
-                    <div class="step-number">01</div>
-                    <div class="step-icon"><i class="fas fa-comments"></i></div>
-                    <h3>Consulta Gratuita</h3>
-                    <p>Escuchamos tus necesidades y evaluamos el proyecto sin costo ni compromiso.</p>
+            <div class="process-timeline">
+                <div class="timeline-line" aria-hidden="true">
+                    <div class="timeline-progress"></div>
                 </div>
-                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
-                <div class="process-step" data-animate="fade-up" data-delay="150">
-                    <div class="step-number">02</div>
-                    <div class="step-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-                    <h3>Cotizacion Detallada</h3>
-                    <p>Recibe un presupuesto transparente con desglose de materiales, mano de obra y tiempos.</p>
+                <div class="process-card" data-animate="fade-up">
+                    <div class="process-card-dot"><span>01</span></div>
+                    <div class="process-card-body">
+                        <div class="process-card-icon"><i class="fas fa-comments"></i></div>
+                        <h3>Consulta Gratuita</h3>
+                        <p>Escuchamos tus necesidades y evaluamos el proyecto sin costo ni compromiso.</p>
+                    </div>
                 </div>
-                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
-                <div class="process-step" data-animate="fade-up" data-delay="300">
-                    <div class="step-number">03</div>
-                    <div class="step-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Ejecucion Profesional</h3>
-                    <p>Nuestro equipo trabaja con puntualidad, limpieza y comunicacion constante.</p>
+                <div class="process-card" data-animate="fade-up" data-delay="150">
+                    <div class="process-card-dot"><span>02</span></div>
+                    <div class="process-card-body">
+                        <div class="process-card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3>Cotizacion Detallada</h3>
+                        <p>Recibe un presupuesto transparente con desglose de materiales, mano de obra y tiempos.</p>
+                    </div>
                 </div>
-                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
-                <div class="process-step" data-animate="fade-up" data-delay="450">
-                    <div class="step-number">04</div>
-                    <div class="step-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Entrega con Garantia</h3>
-                    <p>Verificamos cada detalle contigo y respaldamos nuestro trabajo con garantia escrita.</p>
+                <div class="process-card" data-animate="fade-up" data-delay="300">
+                    <div class="process-card-dot"><span>03</span></div>
+                    <div class="process-card-body">
+                        <div class="process-card-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Ejecucion Profesional</h3>
+                        <p>Nuestro equipo trabaja con puntualidad, limpieza y comunicacion constante.</p>
+                    </div>
+                </div>
+                <div class="process-card" data-animate="fade-up" data-delay="450">
+                    <div class="process-card-dot"><span>04</span></div>
+                    <div class="process-card-body">
+                        <div class="process-card-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Entrega con Garantia</h3>
+                        <p>Verificamos cada detalle contigo y respaldamos nuestro trabajo con garantia escrita.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -276,7 +288,7 @@
                 <h2 class="section-title">Proyectos que hablan por nosotros</h2>
                 <p class="section-desc">Cada proyecto es una muestra de nuestro compromiso con la calidad y la satisfaccion del cliente.</p>
             </div>
-            <div class="projects-grid">
+            <div class="projects-grid projects-grid-expanded">
                 <div class="project-card" data-lightbox="images/proyectos/torre-91.jpg" data-animate="fade-up">
                     <img src="images/proyectos/torre-91.jpg" alt="Proyecto Torre 91" loading="lazy">
                     <div class="project-info">
@@ -285,7 +297,39 @@
                         <p>Remodelacion integral de areas comunes</p>
                     </div>
                 </div>
-                <div class="project-card" data-lightbox="images/proyectos/puerta-el-alma.jpg" data-animate="fade-up" data-delay="100">
+                <div class="project-card" data-lightbox="images/proyectos-nuevos/remodelacion-interior-1.jpg" data-animate="fade-up" data-delay="100">
+                    <img src="images/proyectos-nuevos/remodelacion-interior-1.jpg" alt="Remodelacion interior con pisos de madera" loading="lazy">
+                    <div class="project-info">
+                        <span class="project-tag">Remodelacion</span>
+                        <h3>Residencia Privada</h3>
+                        <p>Pisos de madera y acabados en vidrio</p>
+                    </div>
+                </div>
+                <div class="project-card" data-lightbox="images/proyectos-nuevos/remodelacion-interior-2.jpg" data-animate="fade-up" data-delay="200">
+                    <img src="images/proyectos-nuevos/remodelacion-interior-2.jpg" alt="Acabados interiores profesionales" loading="lazy">
+                    <div class="project-info">
+                        <span class="project-tag">Remodelacion</span>
+                        <h3>Acabados Interiores</h3>
+                        <p>Instalacion de ventanales y pisos</p>
+                    </div>
+                </div>
+                <div class="project-card" data-lightbox="images/proyectos-nuevos/edificio-exterior-1.jpg" data-animate="fade-up">
+                    <img src="images/proyectos-nuevos/edificio-exterior-1.jpg" alt="Trabajo exterior con boom lift" loading="lazy">
+                    <div class="project-info">
+                        <span class="project-tag">Mantenimiento</span>
+                        <h3>Edificio Comercial</h3>
+                        <p>Mantenimiento de fachada con equipo especializado</p>
+                    </div>
+                </div>
+                <div class="project-card" data-lightbox="images/proyectos-nuevos/andamios-trabajo.jpg" data-animate="fade-up" data-delay="100">
+                    <img src="images/proyectos-nuevos/andamios-trabajo.jpg" alt="Trabajo en altura con andamios" loading="lazy">
+                    <div class="project-info">
+                        <span class="project-tag">Mantenimiento</span>
+                        <h3>Mantenimiento en Altura</h3>
+                        <p>Trabajo especializado con andamios</p>
+                    </div>
+                </div>
+                <div class="project-card" data-lightbox="images/proyectos/puerta-el-alma.jpg" data-animate="fade-up" data-delay="200">
                     <img src="images/proyectos/puerta-el-alma.jpg" alt="Proyecto Puerta El Alma" loading="lazy">
                     <div class="project-info">
                         <span class="project-tag">Mantenimiento</span>
@@ -293,12 +337,69 @@
                         <p>Mantenimiento preventivo residencial</p>
                     </div>
                 </div>
+                <div class="project-card" data-lightbox="images/proyectos-nuevos/trabajo-pintura.jpg" data-animate="fade-up">
+                    <img src="images/proyectos-nuevos/trabajo-pintura.jpg" alt="Preparacion y pintura profesional" loading="lazy">
+                    <div class="project-info">
+                        <span class="project-tag">Remodelacion</span>
+                        <h3>Pintura Profesional</h3>
+                        <p>Preparacion de superficies y pintura</p>
+                    </div>
+                </div>
+                <div class="project-card" data-lightbox="images/proyectos-nuevos/van-innova.jpg" data-animate="fade-up" data-delay="100">
+                    <img src="images/proyectos-nuevos/van-innova.jpg" alt="Unidad INNOVA en proyecto" loading="lazy">
+                    <div class="project-info">
+                        <span class="project-tag">Equipo</span>
+                        <h3>Nuestra Flota</h3>
+                        <p>Unidades identificadas en cada proyecto</p>
+                    </div>
+                </div>
                 <div class="project-card" data-lightbox="images/proyectos/proyecto-3.avif" data-animate="fade-up" data-delay="200">
-                    <img src="images/proyectos/proyecto-3.avif" alt="Proyecto residencial" loading="lazy">
+                    <img src="images/proyectos/proyecto-3.avif" alt="Proyecto residencial premium" loading="lazy">
                     <div class="project-info">
                         <span class="project-tag">Airbnb</span>
                         <h3>Residencial Premium</h3>
                         <p>Administracion y acondicionamiento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase -->
+    <section class="video-showcase" id="videos">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">En Accion</span>
+                <h2 class="section-title">Mira nuestro trabajo en campo</h2>
+                <p class="section-desc">Videos reales de nuestros proyectos, capturas aereas con drone y trabajos en ejecucion.</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card video-featured" data-animate="fade-up">
+                    <video controls preload="metadata" poster="images/proyectos-nuevos/edificio-grua.jpg">
+                        <source src="images/videos/drone-proyecto.mp4" type="video/mp4">
+                        Tu navegador no soporta video HTML5.
+                    </video>
+                    <div class="video-label">
+                        <i class="fas fa-drone"></i>
+                        <span>Vista aerea con drone — Proyecto comercial</span>
+                    </div>
+                </div>
+                <div class="video-card" data-animate="fade-up" data-delay="100">
+                    <video controls preload="metadata" poster="images/proyectos-nuevos/boom-lift.jpg">
+                        <source src="images/videos/proyecto-obra-1.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-label">
+                        <i class="fas fa-hard-hat"></i>
+                        <span>Trabajo en campo</span>
+                    </div>
+                </div>
+                <div class="video-card" data-animate="fade-up" data-delay="200">
+                    <video controls preload="metadata" poster="images/proyectos-nuevos/edificio-exterior-1.jpg">
+                        <source src="images/videos/proyecto-obra-2.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-label">
+                        <i class="fas fa-building"></i>
+                        <span>Mantenimiento de edificio</span>
                     </div>
                 </div>
             </div>
@@ -468,7 +569,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="images/logo.png" alt="InnovaGCSV" class="footer-logo">
+                    <img src="images/logos/logo-horizontal-blanco.png" alt="InnovaGCSV" class="footer-logo">
                     <p>Empresa contratista integral en El Salvador. Transformamos espacios con profesionalismo, transparencia y garantia.</p>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/innovagcsv" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -498,7 +599,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 InnovaGCSV General Contractors. Todos los derechos reservados.</p>
+                <p>&copy; 2026 InnovaGCSV General Contractors. Todos los derechos reservados.</p>
                 <p class="footer-credit">Diseñado por <a href="https://noctura-studio.com" target="_blank" rel="noopener">NOCTURA</a></p>
             </div>
         </div>
@@ -517,5 +618,64 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://innovagcsv.com/#business",
+                "name": "InnovaGCSV General Contractors",
+                "description": "Empresa contratista integral en El Salvador especializada en remodelacion, limpieza profesional, fontaneria y administracion Airbnb.",
+                "url": "https://innovagcsv.com",
+                "logo": "https://innovagcsv.com/images/logo.png",
+                "image": "https://innovagcsv.com/images/hero-portada.png",
+                "telephone": "+50374856657",
+                "email": "info@innovagcsv.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "San Salvador",
+                    "addressCountry": "SV"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 13.6929,
+                    "longitude": -89.2182
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "El Salvador"
+                },
+                "priceRange": "$$",
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "50",
+                    "bestRating": "5"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/innovagcsv",
+                    "https://www.instagram.com/innovagcsv"
+                ],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Servicios de Contratista",
+                    "itemListElement": [
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Remodelacion", "url": "https://innovagcsv.com/servicios/remodelacion.html"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Limpieza Profesional", "url": "https://innovagcsv.com/servicios/limpieza.html"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fontaneria", "url": "https://innovagcsv.com/servicios/fontaneria.html"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Administracion Airbnb", "url": "https://innovagcsv.com/servicios/airbnb.html"}}
+                    ]
+                }
+            },
+            {
+                "@type": "WebSite",
+                "name": "InnovaGCSV",
+                "url": "https://innovagcsv.com",
+                "description": "Contratista integral en El Salvador"
+            }
+        ]
+    }
+    </script>
 </body>
 </html>
