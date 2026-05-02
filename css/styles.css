@@ -1312,14 +1312,32 @@ ul { list-style: none; }
     .nav-link.cta-nav { text-align: center; margin-top: 8px; border-bottom: none; border-radius: var(--radius-full); }
 
     .testimonials-grid { grid-template-columns: 1fr; }
-    .projects-grid { grid-template-columns: 1fr 1fr; max-width: 600px; margin: 0 auto; }
+    .projects-grid { grid-template-columns: 1fr 1fr; max-width: 600px; margin: 0 auto; gap: 16px; }
     .projects-grid-expanded { grid-template-columns: 1fr 1fr; }
+    .project-info { padding: 14px; }
+    .project-info h3 { font-size: .95rem; }
+    .project-info p { font-size: .72rem; }
+    .project-tag { font-size: .58rem; padding: 3px 9px; margin-bottom: 6px; }
     .process-connector { display: none; }
     .process-grid { gap: 10px; }
     .form-row { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; }
     .trust-divider { display: none; }
     .trust-bar-inner { flex-direction: column; gap: 12px; }
+    .about-badge { padding: 10px 14px; gap: 10px; }
+    .about-badge-icon { width: 34px; height: 34px; font-size: .9rem; }
+    .about-badge strong { font-size: .75rem; }
+    .about-badge span { font-size: .7rem; }
+}
+
+@media (max-width: 540px) {
+    .projects-grid { grid-template-columns: 1fr; max-width: 360px; }
+    .projects-grid-expanded { grid-template-columns: 1fr; }
+    .project-card { aspect-ratio: 16/10; }
+    .project-info { padding: 18px; }
+    .project-info h3 { font-size: 1.05rem; }
+    .project-info p { font-size: .8rem; }
+    .project-tag { font-size: .65rem; padding: 5px 12px; margin-bottom: 8px; }
 }
 
 @media (max-width: 480px) {
